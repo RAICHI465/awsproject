@@ -25,7 +25,7 @@ public class PrimeNumberServlet extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        // from, to を受け取る
+        // パラメータから from, to を受け取る
         Long from = Long.valueOf(req.getParameter("from"));
         Long to = Long.valueOf(req.getParameter("to"));
 
@@ -33,6 +33,7 @@ public class PrimeNumberServlet extends HttpServlet {
         CalculateService calculateService = new CalculateService();
         ArrayNode results = calculateService.primeNumber(from, to);
 
+        // JSON で返す
         resp.setContentType("application/json");
         resp.getWriter().print(results);
     }
