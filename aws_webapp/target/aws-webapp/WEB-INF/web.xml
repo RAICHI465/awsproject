@@ -5,4 +5,14 @@
     xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
     version="3.1"
     metadata-complete="true">
+    
+    <servlet>
+        <servlet-name>servlet</servlet-name>
+        <servlet-class>assignment.servlet.PrimeNumberServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>servlet</servlet-name>
+        <url-pattern>/PrimeNumber</url-pattern>
+    </servlet-mapping>
 </web-app>
